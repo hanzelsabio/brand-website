@@ -6,11 +6,13 @@ import { CheckCheck } from "lucide-react";
 
 function ProductDetails() {
   const { id } = useParams();
-  const { products } = useProducts();
+  const { products, newArrivals, oversizedTee, boxTee } = useProducts();
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
-  const product = products.find((p) => String(p.id) === String(id));
+  const allProducts = [...products, ...newArrivals, ...oversizedTee, ...boxTee];
+
+  const product = allProducts.find((p) => String(p.id) === String(id));
   const [quantity, setQuantity] = useState(1);
   const [isFading, setIsFading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -54,11 +56,11 @@ function ProductDetails() {
   if (!product) return <p>Product not found.</p>;
 
   const featured = useMemo(() => {
-    return products
+    return allProducts
       .filter((p) => String(p.id) !== String(id))
       .sort(() => 0.5 - Math.random())
       .slice(0, 4);
-  }, [products, id]);
+  }, [allProducts, id]);
 
   const handleProductClick = (targetId) => {
     setIsFading(true);

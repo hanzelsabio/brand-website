@@ -39,7 +39,7 @@ function Order() {
     <section className="order_body">
       <div className="max-w-5xl mx-auto grid grid-cols-6 gap-4 p-4">
         {/* Sidebar */}
-        <aside className="p-4 col-span-12 md:col-span-2">
+        <aside className="col-span-12 md:col-span-2 p-4">
           <p className="order_title text-xs font-bold py-2">My Account</p>
           <ul className="text-xs space-y-2">
             <li>

@@ -18,8 +18,8 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="newsletter_section bg-white py-12 px-8 sm:px-12">
-      <div className="newsletter_body max-w-4xl mx-auto text-center">
+    <section className="newsletter_section bg-white py-12 sm:px-12">
+      <div className="newsletter_body max-w-md mx-auto text-center">
         <h2 className="newsletter_heading md:text-xl font-bold text-gray-800 m-2 uppercase">
           Newsletter
         </h2>
@@ -33,14 +33,14 @@ export default function Newsletter() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row text-xs items-center justify-center gap-3 mb-8"
+            className="flex flex-col sm:flex-row text-xs items-center justify-center gap-3 px-8 mb-8"
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
-              className="w-full sm:w-70 px-4 py-3.5 border border-gray-300 focus:outline-none focus:outline-none"
+              className="w-full px-4 py-3.5 border border-gray-300 focus:outline-none focus:outline-none"
             />
             <button
               type="submit"
