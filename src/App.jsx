@@ -5,6 +5,7 @@ import Header from "./components/layout/Header";
 // import Hero from "./components/layout/Hero";
 import Footer from "./components/layout/Footer";
 import Newsletter from "./components/layout/Newsletter";
+import BackToTop from "./components/layout/BackToTop";
 
 import AppRoutes from "./routes/AppRoutes";
 import { AuthProvider } from "./context/AuthContext";
@@ -26,6 +27,7 @@ function App() {
           </main>
           {/* <Hero /> */}
           <Newsletter />
+          <BackToTop />
           <Footer />
         </ProductProvider>
       </CartProvider>

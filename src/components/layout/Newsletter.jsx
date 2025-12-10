@@ -40,11 +40,11 @@ export default function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
-              className="w-full px-4 py-3.5 border border-gray-300 focus:outline-none focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:outline-none"
             />
             <button
               type="submit"
-              className="w-full sm:w-auto bg-gray-900 text-white px-8 py-3.5 hover:bg-gray-800 transition-all"
+              className="w-full sm:w-auto bg-gray-900 text-white px-8 py-3 hover:bg-gray-800 transition-all"
               style={{ cursor: "pointer" }}
             >
               Subscribe

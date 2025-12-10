@@ -14,6 +14,15 @@ html {
   text-transform: uppercase;
 }
 
+/* Hero Section */
+
+.hero_section {
+  /* background-image: url("/src/assets/images/stan-brand-bg.png"); */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
 /* Footer Section */
 
 footer {

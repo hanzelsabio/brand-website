@@ -2,10 +2,9 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="hero_section bg-black min-h-[40vh]">
-      <div className="hero_body flex items-center justify-center item-center">
-        <h2 className="hero_title text-white text-2xl font-bold uppercase mb-8"></h2>
-      </div>
+    <section id="hero" className="hero_section bg-black">
+      <div className="absolute inset-0 bg-black/70 z-0"></div>
+      <div className="w-full h-100 relative z-10 text-white text-center"></div>
     </section>
   );
 }

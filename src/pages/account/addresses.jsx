@@ -15,7 +15,7 @@ function Addresses() {
               </Link>
             </li>
             <li>
-              <Link to="/" className="hover:underline">
+              <Link to="/account/addresses" className="hover:underline">
                 View Addresses
               </Link>
             </li>
