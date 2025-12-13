@@ -56,11 +56,28 @@ function ProductDetails() {
   if (!product) return <p>Product not found.</p>;
 
   const featured = useMemo(() => {
-    return allProducts
-      .filter((p) => String(p.id) !== String(id))
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 4);
-  }, [allProducts, id]);
+    if (!product) return [];
+
+    // Clone to avoid mutation
+    const candidates = [...allProducts].filter(
+      (p) => String(p.id) !== String(product.id)
+    );
+
+    // OPTIONAL: exclude same category (remove if not needed)
+    if (product.category) {
+      return candidates
+        .filter((p) => p.category !== product.category)
+        .slice(0, 4);
+    }
+
+    // Shuffle once
+    for (let i = candidates.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+
+    return candidates.slice(0, 4);
+  }, [product?.id]); // 🔒 ONLY reruns when product changes
 
   const handleProductClick = (targetId) => {
     setIsFading(true);
@@ -77,7 +94,13 @@ function ProductDetails() {
       return;
     }
 
-    addToCart({ ...product, selectedSize }, quantity);
+    addToCart(
+      {
+        ...structuredClone(product),
+        selectedSize,
+      },
+      quantity
+    );
 
     setShowPopup(false);
     setTimeout(() => setShowPopup(true), 10);
